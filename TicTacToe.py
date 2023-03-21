@@ -21,8 +21,8 @@ logo = """
 
 st.sidebar.info('Welcome to the TICTACTOE game. Silakan Masukkan nama anda tuan ')
 
-st.title("GAME (TICTATOE vs Komputer) INI adalah FINAL PROJECT Kelompok K")
-st.header("Terima kasih Anda memainkan Game ini ")
+st.title("GAME (TICTATOE vs Komputer)")
+st.header("Terima kasih Anda memainkan Game ini (@v1tr4)")
 st.text("Game ini dimainkan Oleh Komputer dengan tanda \"X\"")
 st.text("Game ini dimainkan Oleh Anda dengan tanda \"#\" \n")
 # nama = input("Silakan masukkan nama anda Tuan: ")

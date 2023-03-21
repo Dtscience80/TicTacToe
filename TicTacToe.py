@@ -18,15 +18,13 @@ logo = """
       """
 
 
-st.title('Stock Price Predictions')
-st.sidebar.info('Welcome to the Stock Price Prediction App. Choose your options below')
-st.sidebar.info("Created and designed by [Jonaben](https://www.linkedin.com/in/jonathan-ben-okah-7b507725b)")
 
+st.sidebar.info('Welcome to the TICTACTOE game. Choose your options below')
 
-print("GAME (TICTATOE vs Komputer) INI adalah FINAL PROJECT Kelompok K")
-print("Terima kasih Anda memainkan Game ini ")
-print("Game ini dimainkan Oleh Komputer dengan tanda \"X\"")
-print("Game ini dimainkan Oleh Anda dengan tanda \"#\" \n")
+st.title("GAME (TICTATOE vs Komputer) INI adalah FINAL PROJECT Kelompok K")
+st.header("Terima kasih Anda memainkan Game ini ")
+st.text("Game ini dimainkan Oleh Komputer dengan tanda \"X\"")
+st.text("Game ini dimainkan Oleh Anda dengan tanda \"#\" \n")
 # nama = input("Silakan masukkan nama anda Tuan: ")
 # end_game = False
 #new=2
@@ -86,17 +84,17 @@ def pilih(user,a=0,b=0):
                             board[i][j] = sign  
                             isi = False   
             except:
-                print("Masukkan kolom 1 s/d ", n**2)
+                st.text("Masukkan kolom 1 s/d ", n**2)
     elif(user==2):       
         while cek_isi(a,b):
             a=random.randint(0, n-1)
             b=random.randint(0, n-1)
         else:
             board[a][b] = " X"   
-            print("Komputer Memilih [{},{}]" .format(a,b))
+            st.text("Komputer Memilih [{},{}]" .format(a,b))
             tampil()
             if(menang(2)): 
-                print("-----FINISH---- Komputer Menang !!!! ") ; 
+                st.text("-----FINISH---- Komputer Menang !!!! ") ; 
                 return True 
     
 def nilai():
@@ -112,8 +110,8 @@ def tampil():
             if(boardt [i][j] != ' X' and boardt [i][j] != ' #' and int(boardt[i][j])<10): 
                 boardt[i][j] = (" " + boardt [i][j])
     
-    #[print(boardt[i][:], sep ="  ") for i in range(len(boardt))]
-    #print("")
+    #[st.text(boardt[i][:], sep ="  ") for i in range(len(boardt))]
+    #st.text("")
     
     print(Fore.WHITE, Style.BRIGHT)       
     for i in range(len(boardt)):
@@ -137,11 +135,11 @@ def pilih_dimensi():
     ulang = True
   while ulang:      
     try:   
-        print("\n Anda harus memasukan angka dari 3 - 9 untuk dimensi board")
+        st.text("\n Anda harus memasukan angka dari 3 - 9 untuk dimensi board")
         n = int(input("Masukkan dimensi (nxn) Angka (3-9) :"))
         if(n>2 and n<10): ulang = False; return n;
     except:
-        print("Dimensi board salah  ")
+        st.text("Dimensi board salah  ")
         #print("\n Anda harus memasukan angka dari 3 - 9 untuk dimensi board")
 
 def new_game():
@@ -176,22 +174,22 @@ def new_game():
         if(not menang(1)):   
           pilih(1)
           tampil()
-          if(menang(1)): print("-----FINISH---- Tuan", nama, " Menang !!!! ");break;          
+          if(menang(1)): st.text("-----FINISH---- Tuan", nama, " Menang !!!! ");break;          
         else: 
-          print("-----FINISH---- Tuan", nama, " Menang !!!! ");break;
+          st.text("-----FINISH---- Tuan", nama, " Menang !!!! ");break;
       else:
-           print("!BOARD FULL, RELOAD!");break;
+           st.text("!BOARD FULL, RELOAD!");break;
       if(available()):
-        print("!!! Giliran Komputer Berpikir (MOHON TUNGGU 1s) !!!")
+        st.text("!!! Giliran Komputer Berpikir (MOHON TUNGGU 1s) !!!")
         if(not menang(2)):          
             #time.sleep(1)
             a=random.randint(0, n-1)
             b=random.randint(0, n-1)
             if(pilih(2,a,b)) : break       
         else: 
-          print("-----FINISH---- Komputer Menang !!!! ")
+          st.text("-----FINISH---- Komputer Menang !!!! ")
       else:
-           print("!BOARD FULL, Please RELOAD!"); break;
+           st.text("!BOARD FULL, Please RELOAD!"); break;
 
 
 
@@ -207,13 +205,13 @@ def mulai():
             new_game()
         elif new == "0":
             end_game = True
-            print("Anda Memilih Exit Game, Terima Kasih sudah bermain..")
+            st.text("Anda Memilih Exit Game, Terima Kasih sudah bermain..")
         elif new == "2":
             os.system("clear")
         else:
             os.system("clear")
-            print("Mohon memilih 0 atau 1 atau 2")
+            st.text("Mohon memilih 0 atau 1 atau 2")
     except: 
-        print("Mohon memilih 0 atau 1 atau 2")
+        st.text("Mohon memilih 0 atau 1 atau 2")
         
 mulai()

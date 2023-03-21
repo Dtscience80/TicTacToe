@@ -128,7 +128,7 @@ def pilih_dimensi():
   ulang = False
   global n
   try: 
-    n = int(input("Masukkan dimensi (nxn) Angka (3-9) :"))
+    n = int(st.sidebar.text_input('Masukkan dimensi (nxn) Angka (3-9) :', value = 3))
     if(n < 3 or n > 9 or (not isinstance(n,int))): ulang = True
     else: return n
   except: 
@@ -136,12 +136,11 @@ def pilih_dimensi():
   while ulang:      
     try:   
         st.text("\n Anda harus memasukan angka dari 3 - 9 untuk dimensi board")
-        n = int(input("Masukkan dimensi (nxn) Angka (3-9) :"))
+        n = int(st.sidebar.text_input('Masukkan dimensi (nxn) Angka (3-9) :', value = 3))
         if(n>2 and n<10): ulang = False; return n;
     except:
         st.text("Dimensi board salah  ")
-        #print("\n Anda harus memasukan angka dari 3 - 9 untuk dimensi board")
-
+            
 def new_game():
   global new
   global isi
@@ -149,14 +148,6 @@ def new_game():
   global board
   
   nama = st.sidebar.text_input("Silakan masukkan nama anda Tuan: ", value = '')
-  """
-  n = int(input("Masukkan dimensi (nxn) Angka (3-9) :"))
-  while (n < 3 or n > 9 or (not isinstance(n,int))) : #catch string on progress
-    os.system("clear")
-    print(logo)
-    print("\nAnda harus memasukan angka dari 3 - 9 untuk dimensi board")
-    n = int(input("Masukkan dimensi (nxn) Angka (3-9) :"))
-  """
   n = pilih_dimensi()
   isi = 0;
   board = [[ nilai() for i in range(n)] for j in range(n) ]

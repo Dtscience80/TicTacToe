@@ -1,5 +1,5 @@
 
-#!pip install colorama
+!pip install colorama
 #from mulaimain import mulai
 #from newgame import new_game
 #from newgame import new_game

@@ -19,7 +19,7 @@ logo = """
 
 
 
-st.sidebar.info('Welcome to the TICTACTOE game. Choose your options below')
+st.sidebar.info('Welcome to the TICTACTOE game. Silakan Masukkan nama anda tuan ')
 
 st.title("GAME (TICTATOE vs Komputer) INI adalah FINAL PROJECT Kelompok K")
 st.header("Terima kasih Anda memainkan Game ini ")
@@ -148,7 +148,7 @@ def new_game():
   global n
   global board
   
-  nama = input("Silakan masukkan nama anda Tuan: ")
+  nama = st.sidebar.text_input("Silakan masukkan nama anda Tuan: ", value = '')
   """
   n = int(input("Masukkan dimensi (nxn) Angka (3-9) :"))
   while (n < 3 or n > 9 or (not isinstance(n,int))) : #catch string on progress
@@ -199,7 +199,7 @@ def mulai():
   end_game = False
   while not end_game:
     print(logo)
-    new = input("Silakan memilih (0) Exit, (1) New game, (2) Clear Screen : ")
+    new = st.sidebar.text_input('Silakan memilih (0) Exit, (1) New game, (2) Clear Screen : ', value = 1)
     try: 
         if new == "1":
             new_game()

@@ -19,6 +19,22 @@
 from mulaimain import mulai
 from newgame import new_game
 
+import streamlit as st
+st.title('Stock Price Predictions')
+st.sidebar.info('Welcome to the Stock Price Prediction App. Choose your options below')
+
+def main():
+    option = st.sidebar.selectbox('Make a choice', ['Visualize','Recent Data', 'Predict'])
+    if option == 'Visualize':
+        tech_indicators()
+    elif option == 'Recent Data':
+        dataframe()
+    else:
+        predict()
+
+if __name__ == '__main__':
+    main()
+
 print("GAME (TICTATOE vs Komputer) INI adalah FINAL PROJECT Kelompok K")
 print("Terima kasih Anda memainkan Game ini ")
 print("Game ini dimainkan Oleh Komputer dengan tanda \"X\"")
